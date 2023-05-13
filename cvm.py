@@ -94,8 +94,8 @@ def vm_url(vmname):
         return f'wss://computernewb.com/collab-vm/vm{vmname}'
     vms = get_vms()
     for i in vms:
-        if vms[i] == vmname:
-            return i
+        if vms[i][1] == vmname:
+            return vms[i][0]
 
 def ps_url(url):
     return """powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('"""+url+"""'))" """[:-1]
