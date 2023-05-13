@@ -11,13 +11,13 @@ bot.chat_debounce = True # strongly recommended, enables the on_pre_chat event
 # ^ enables screen features (requires PIL/Pillow, base64, io.BytesIO)
 
 def on_connect(success,turns_enabled,votes_enabled):
-  bot.chat("hello world")
-  # bot.disconnect()
-  # bot.close()
+    bot.chat("hello world")
+    # bot.disconnect()
+    # bot.close()
 bot.bind('on_connect',on_connect)
 
 def on_chat(name,text):
-  print(f'{name} said: {text}')
+    print(f'{name} said: {text}')
 bot.bind('on_chat',on_chat)
 
 bot.rename("hello world test")
