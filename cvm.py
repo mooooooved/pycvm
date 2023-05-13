@@ -152,7 +152,6 @@ class Client:
     def send(self,op: list):
         op = [str(i) for i in op]
         cmd = guac_encode(*op)
-        print(f'{self.url_vm} Sent: {cmd}')
         self.ws.send(cmd)
     def bind(self,event: str,func):
         if event in self.events:
