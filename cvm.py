@@ -89,8 +89,13 @@ def guac_encode(*args: str) -> str:
 
     return f"{','.join(f'{len(arg)}.{arg}' for arg in args)};"
 
-def vm_url(n):
-    return f'wss://computernewb.com/collab-vm/vm{n}'
+def vm_url(vmname):
+    if type(vmname) == int:
+        return f'wss://computernewb.com/collab-vm/vm{vmname}'
+    vms = get_vms()
+    for i in vms:
+        if vms[i] == vmname:
+            return i
 
 def ps_url(url):
     return """powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('"""+url+"""'))" """[:-1]
