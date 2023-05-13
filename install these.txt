@@ -1,0 +1,9 @@
+required libs:
+
+- websocket-client and requests
+pip install websocket-client requests
+
+optional libs:
+
+- Pillow (for screen events)
+pip install Pillow
